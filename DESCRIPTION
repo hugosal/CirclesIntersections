@@ -1,13 +1,13 @@
 Package: CirclesIntersections
 Type: Package
 Title: Algorithm for computation of the intersection areas of N circles
-Version: 0.1.0
+Version: 1.0
 Authors@R: person(given = "Hugo",
            family = "Salinas",
            role = c("aut", "cre"),
            email = "hugosal@comunidad.unam.mx",
            comment = c(ORCID = "0000-0002-1734-2977"))
-Description: This is an implementation of Librino, Levorato, and Zorzi (2014) <doi:10.1002/wcm.2305>
+Description: Implementation of Librino, Levorato, and Zorzi (2014) <doi:10.1002/wcm.2305>
     algorithm for computation of the intersection areas of an arbitrary number of circles.
 License: MIT + file LICENSE
 Encoding: UTF-8

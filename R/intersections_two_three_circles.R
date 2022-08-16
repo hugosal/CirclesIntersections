@@ -13,10 +13,10 @@ intersection_two_circles <- function(centers_x, centers_y, radii){
   r2 <- radii[2]
   D <- sqrt( (centers_x[1] - centers_x[2])**2 + (centers_y[1] - centers_y[2])**2 )
 
-  if (D <= abs(r1 - r2)){ # one circle contains the other
+  if (D <= abs(r1 - r2)){
     return (pi * min(r1, r2)**2)
 
-  }else if (D > r1 + r2){ # no intersection
+  }else if (D > r1 + r2){
     return (0)
   }
 
@@ -50,13 +50,11 @@ intersection_three_circles <- function(centers_x, centers_y, radii){
 
   if (any(combn(1:3, 2,
                 FUN = function(x){Dist[x[1], x[2] ] > r[x[1]] + r[x[2]] } ))){return(0)}
-
-  # count which circles are inside of another circle
+  
   circles_inside <-  combn(1:3, 2,
                      FUN = function(x){
                        r[x[1]] >=  Dist[x[1], x[2]] + r[x[2]]} )
 
-  # count which circles intersect
   circles_intersecting <- combn(1:3, 2,
                  FUN = function(x){
                    if ((r[x[1]] - r[x[2]]) < Dist[x[1], x[2]] &
@@ -163,9 +161,9 @@ intersection_three_circles <- function(centers_x, centers_y, radii){
   x23 <- (x23pp * costhetap) - (y23pp * sinthetap) + d1_2
   y23 <- (x23pp * sinthetap) + (y23pp * costhetap)
 
-  c1 <- sqrt((x13 - x12)**2 + (y13 - y12)**2) # i3 j2 k1
-  c2 <- sqrt((x12 - x23)**2 + (y12 - y23)**2) # i1 j3 k2
-  c3 <- sqrt((x23 - x13)**2 + (y23 - y13)**2) # i2 j1 k3
+  c1 <- sqrt((x13 - x12)**2 + (y13 - y12)**2)
+  c2 <- sqrt((x12 - x23)**2 + (y12 - y23)**2)
+  c3 <- sqrt((x23 - x13)**2 + (y23 - y13)**2)
 
   A <- (sqrt((c1 + c2 + c3) * (c2 + c3 - c1) * (c1 + c3 - c2) * (c1 + c2 - c3))/4) +
     ((rs_1 * asin(c1 / (2 * r[1]))) - ( (c1/ 4) * sqrt((4 * rs_1) - c1**2))) +

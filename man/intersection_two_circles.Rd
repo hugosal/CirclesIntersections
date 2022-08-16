@@ -10,9 +10,8 @@ intersection_two_circles(centers_x, centers_y, radii)
 intersection_three_circles(centers_x, centers_y, radii)
 }
 \arguments{
-\item{centers_x, centers_y, radii}{Numeric vectors of length N with the
-coordinates of the center of the circles in x and y, and the radius
-respectively.}
+\item{centers_x, centers_y, radii}{Numeric vectors of length N with the x, y
+coordinates of the center, and the radius of the circles.}
 }
 \description{
 `intersection_two_circles()` Returns the area of intersection of two circles.

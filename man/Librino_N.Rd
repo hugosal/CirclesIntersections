@@ -7,9 +7,8 @@
 Librino_N(centers_x, centers_y, radii)
 }
 \arguments{
-\item{centers_x, centers_y, radii}{Numeric vectors of length N with the
-coordinates of the center of the circles in x and y, and the radius
-respectively.}
+\item{centers_x, centers_y, radii}{Numeric vectors of length N with the x, y
+coordinates of the center, and the radius of the circles.}
 }
 \value{
 A list of length N containing the areas of exclusive intersection.
@@ -29,8 +28,7 @@ circles.
 \details{
 This is an implementation of Librino, Levorato, and Zorzi (2014)
 algorithm for computation of the intersection areas of an arbitrary
-number of circles. Given a set of circles this function computes all
-the possible intersection areas of the possible subsets of the circles.
+number of circles.
 }
 \examples{
 # Example of intersection areas including a Reuleaux triangle
@@ -38,11 +36,13 @@ x <- c(0, 1, 0.5)
 y <- c(0, 0, sqrt(1-0.5**2))
 radii <- c(1, 1, 1)
 intersections <- Librino_N(centers_x = x, centers_y = y, radii = radii)
+intersections
 # Example with more circles
 x2 <- c(0, 4, 2, 4, 5)
 y2 <- c(1, 5, 4, 2, 1)
 radii2 <- c(1, 4 ,2, 2, 1)
 intersections2 <- Librino_N(centers_x = x2, centers_y = y2, radii = radii2)
+intersections2
 }
 \references{
 Librino, F., Levorato, M., & Zorzi, M. (2014). An algorithmic solution for
