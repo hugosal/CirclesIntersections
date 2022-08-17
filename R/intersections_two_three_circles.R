@@ -1,11 +1,13 @@
 #' @title Auxiliary functions for computing circle intersection areas
 
 #' @description
-#'  `intersection_two_circles()` Returns the area of intersection of two circles.
+#'  `intersection_two_circles()` Function for the the area of intersection of two circles.
 #'
-#'  `intersection_three_circles()` Returns the area of intersection of three circles.
+#'  `intersection_three_circles()` Function for the  area of intersection of three circles.
 #'
 #' @inheritParams Librino_N
+#' 
+#'@return The area of intersection of the circles is computed.
 #'
 #' @export
 intersection_two_circles <- function(centers_x, centers_y, radii){
