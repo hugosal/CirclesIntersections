@@ -14,10 +14,10 @@ intersection_three_circles(centers_x, centers_y, radii)
 coordinates of the center, and the radius of the circles.}
 }
 \value{
-Return the intersection area of the circles
+The area of intersection of the circles is computed.
 }
 \description{
-`intersection_two_circles()` Computes the area of intersection of two circles.
+`intersection_two_circles()` Function for the the area of intersection of two circles.
 
- `intersection_three_circles()` Computes the area of intersection of three circles.
+ `intersection_three_circles()` Function for the  area of intersection of three circles.
 }
