@@ -1,7 +1,7 @@
 Package: CirclesIntersections
 Type: Package
 Title: Algorithm for Computation of the Intersection Areas of N Circles
-Version: 1.0
+Version: 1.1
 Authors@R: person(given = "Hugo",
            family = "Salinas",
            role = c("aut", "cre"),
