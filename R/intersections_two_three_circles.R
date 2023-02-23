@@ -83,8 +83,8 @@ intersection_three_circles <- function(centers_x, centers_y, radii){
     }
 
   intersec_points_contained <- c(FALSE, FALSE , FALSE)
-  # compute points of overlap between  a pair of circles, and see if
-  # the third other circle (g) contains both of them
+  # compute points of overlap between  a pair of circles, and cheack if
+  # the other circle (g) contains both of them
   for (g in 1:3){
     c1 <- (1:3)[-g][1]
     c2 <- (1:3)[-g][2]
@@ -151,7 +151,7 @@ intersection_three_circles <- function(centers_x, centers_y, radii){
 
   if (! (x12 - (d1_3 * costheta))**2 + (y12 + (d1_3 * sintheta))**2 > rs_3 ){return(0)}
 
-  x13p <- (rs_1 - rs_3 + d1_3**2) / (2 * d1_3)
+  x13p <- (rs_1 - rs_3 + d1_3**2)/(2 * d1_3)
   y13p <- -sqrt((2 * d1_3**2 * (rs_1 + rs_3)) - (rs_1 - rs_3)**2 - d1_3**4)/(2 * d1_3)
 
   x13 <- (x13p * costheta) - (y13p * sintheta)
@@ -162,6 +162,8 @@ intersection_three_circles <- function(centers_x, centers_y, radii){
 
   x23 <- (x23pp * costhetap) - (y23pp * sinthetap) + d1_2
   y23 <- (x23pp * sinthetap) + (y23pp * costhetap)
+  
+  if (x23 - x13 == 0 ){return(0)}
 
   c1 <- sqrt((x13 - x12)**2 + (y13 - y12)**2)
   c2 <- sqrt((x12 - x23)**2 + (y12 - y23)**2)
@@ -183,18 +185,18 @@ intersection_three_circles <- function(centers_x, centers_y, radii){
 two_circles_inters_points <- function(centers_x, centers_y, radii,
                                       distance,
                                       circle_numbers = NULL){
-
+  
   a <- (radii[1]**2 - radii[2]**2 + distance**2) / (2 * distance)
   h <- sqrt(radii[1]**2 - a**2)
   x2 <- centers_x[1] + a * (centers_x[2] - centers_x[1])/distance
   y2 <- centers_y[1] + a * (centers_y[2] - centers_y[1])/distance
-
+  
   dx <- h*(centers_y[2]-centers_y[1])/distance
   dy <- h*(centers_x[2]-centers_x[1])/distance
-
+  
   x3_1 <- x2+dx
   x3_2 <- x2-dx
-
+  
   y3_1 <- y2-dy
   y3_2 <- y2+dy
   if (! is.null(circle_numbers)){
